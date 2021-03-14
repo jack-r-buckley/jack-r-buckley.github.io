@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jack's Patch - DevAcademy student blog</title>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <!--connect character set and font -->
+</head>
+
+<body>
+  <header>
+    <img src="../images/blog-logo.png" class="logo" alt="Jack's Patch logo">
+    <input type="checkbox" id="menu-icon" class="menu-toggle">
+    <label for="menu-icon" class="menu-button">
+      <img class="icon-image" src="../images/hamburger-menu-icon.png">
+    </label>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Home</a>
+          <a href="../technical-blog-hub.html">Technical Blogs</a>
+          <a href="../core-blog-hub.html">Core Blogs</a>
+        </li>
+      </ul>
+    </nav>
+  </header>  
+  
+  <div class="article-container">
+    <h2>Ups and Downs: Positioning Elements with CSS</h2>
+    <div class="article-paragraph">
+      <p>
+        If you want to make a website, chances are you have a bunch of stuff that needs to go on it. Text, images, videos, 
+        animations and any other stuff that you find on a website are called <strong>elements.</strong> 
+        <br><br>
+        Elements contain the content of a website. But what decides where they go on the page, and what they look like? 
+        Web developers use style sheets to define sets of rules that determine how elements are displayed.
+        <br><br>
+        These style sheets, known as <strong>CSS sheets</strong>, define things like what font is used to display text, 
+        whether boxes have borders around them and what colour the background is.   
+      </p>
+    </div>
+
+    <div class="article-paragraph">
+      <h3>Positioning</h3> 
+      <p>
+        Today, we are going to talk about a specific CSS property called positioning. Positioning allows us to control where 
+        elements go on the page and how they behave in comparison to other elements.
+        <br><br>
+        One thing we will talk about is the document flow of the page. By default, elements are arranged in the order they 
+        appear in the code. Some types of elements take up a whole line, meaning the next element is displayed on the line below. 
+        Others can be displayed in the same line. 
+        <br><br>
+        By changing the positioning of an element we can move it from its position in the document flow - or take it out 
+        of the flow altogether. Let’s look at how this works.
+      </p>  
+    </div>
+
+    <div class="article-paragraph">
+      <h3>Static</h3>
+      <p>
+        Static means that the element will take its normal place within the flow of the document. You don’t usually need to specify 
+        this since it is the default setting.
+        <br><br>
+        Here, we have two different kinds of element. One displays a red box, the other a blue box. Both of them take up the 
+        whole line, so the next element is displayed on a new line. We will be moving the blue box around to illustrate different 
+        kinds of positioning. Right now, it is in its normal place in the flow of the document.
+      </p>
+    </div>
+  
+    <div class="article-image-container">
+      <img src="../images/blog-positioning/code-example-1.png" class="article-image">
+      <img src="../images/blog-positioning/box-example-1.png" class="article-image">
+    </div>
+    
+    <div class="article-paragraph">
+      <h3>Relative</h3>
+      <p>
+        The element will take its normal place in the flow of the document, but you can move it around relative to this position.
+        <br><br>
+        Using the commands <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> and <strong>left</strong>, you can 
+        add space on each side of the element that will push it around on the page. Here, the code <strong>left: 100px;</strong> is 
+        used to add 100 pixels of space to the left of where it was previously.
+        <br><br>
+        You can also use the command <strong>z-index</strong> to determine the depth of the element. Where two elements overlap 
+        each other, the one with the higher z-index will appear on top.
+      </p>
+    </div>
+    
+    <div class="article-image-container">
+      <img src="../images/blog-positioning/code-example-2.png" class="article-image">
+      <img src="../images/blog-positioning/box-example-2.png" class="article-image">
+      <div class="article-inset">
+        <p>
+          <strong>Uses:</strong>
+        </p>
+        <ul>
+          <li>lining up elements so that they are flush with each other</li>
+          <li>creating visually striking layouts that "break the grid"</li>
+          <li>arranging images to display on top of one another</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="article-paragraph">
+      <h3>Fixed</h3>
+      <p>
+        The element is now removed from the normal flow of the document. As you can see, the red boxes are now stacked one after 
+        the other. They do not leave space for the blue box.
+        <br><br>
+        The element is now positioned relative to the viewport - what you can see on the screen. The default position (0,0) is at 
+        the top left hand corner of the screen. You can still use the top, right, bottom and left commands to move the element 
+        relative to this position and it will stay in the same position on the screen when you scroll.
+      </p>
+    </div>
+    
+    <div class="article-image-container">
+      <div class="article-inset">
+        <p>
+          <strong>Uses:</strong>
+        </p>
+        <ul>
+          <li>creating UI elements that "float" on top of the page such as navigation bars</li>
+          <li>creating pop-ups for user input</li>
+        </ul>
+      </div>
+      <img src="../images/blog-positioning/code-example-3.png" class="article-image">
+      <img src="../images/blog-positioning/box-example-3.png" class="article-image">
+    </div>
+      
+    <div class="article-paragraph">
+      <h3>Absolute</h3>
+      <p>
+        Similarly to <strong>fixed</strong>, the element is removed from the normal flow of the document. But, its position is now 
+        determined relative to its nearest parent element. 
+        <br><br>
+        For example, the blue box has now been placed inside a larger box. This larger box has a fixed position. The blue box is 
+        contained within the larger box but can be moved relative to its position using the top, right, bottom and left commands.
+      </p>
+    </div>
+    
+    <div class="article-image-container">
+      <img src="../images/blog-positioning/code-example-4.png" class="article-image">
+      <img src="../images/blog-positioning/box-example-4.png" class="article-image">
+      <div class="article-inset">
+        <p>
+          <strong>Uses:</strong>
+        </p>
+        <ul>
+          <li>creating forms and other complex elements</li>
+          <li>placing navigation buttons within larger elements</li>
+          <li>putting 'close' buttons in the top left corner of a pop-up</li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>
